@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Posts</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ember.js/1.13.13/ember.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.13.15/ember-data.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <script type="text/x-handlebars" data-template-name="application">
+    <h1>Posts</h1>
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="posts">
+    <ul>
+      {{#each model as |post|}}
+        <li>{{post.title}} - {{post.published_at}}</li>
+      {{/each}}
+    </ul>
+    <button {{action "createPost"}}>Create Post</button>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="post">
+    <h2>{{model.title}}</h2>
+    <p>{{model.content}}</p>
+    <button {{action "editPost"}}>Edit</button>
+    <button {{action "deletePost"}}>Delete</button>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="edit-post">
+    <h2>Edit Post</h2>
+    <form {{action "savePost" on="submit"}}>
+      <label>Title</label>
+      {{input value=model.title}}
+      <label>Content</label>
+      {{textarea value=model.content}}
+      <button type="submit">Save</button>
+    </form>
+  </script>
+</body>
+</html>

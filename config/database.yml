@@ -1,0 +1,26 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: forma_development
+  pool: 5
+  username: root
+  password:
+  host: localhost
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: forma_test
+  pool: 5
+  username: root
+  password:
+  host: localhost
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: forma_production
+  pool: 5
+  username: root
+  password:
+  host: localhost

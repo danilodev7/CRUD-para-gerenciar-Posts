@@ -1,0 +1,9 @@
+<!-- filepath: /home/danilo/workdo/testes/forma/ember-app/app/templates/posts/new.hbs -->
+<h1>New Post</h1>
+<form {{action "savePost" on="submit"}}>
+  <label for="title">Title</label>
+  {{input value=model.title id="title"}}
+  <label for="content">Content</label>
+  {{textarea value=model.content id="content"}}
+  <button type="submit">Save</button>
+</form>

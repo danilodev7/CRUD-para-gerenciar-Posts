@@ -1,0 +1,8 @@
+<!-- filepath: /home/danilo/workdo/testes/forma/ember-app/app/templates/posts/index.hbs -->
+<h1>Posts</h1>
+<ul>
+  {{#each model as |post|}}
+    <li>{{post.title}} - {{post.publishedAt}}</li>
+  {{/each}}
+</ul>
+{{#link-to 'posts.new'}}New Post{{/link-to}}
